@@ -57,7 +57,7 @@ public class ApiController {
     public boolean updateregion(@PathVariable int id, @RequestBody Region region){
         Region updatedregion ;
         try{
-          updatedregion=   regionrep.findById(id).get();
+          updatedregion=regionrep.findById(id).get();
           updatedregion.setRegionName(region.getRegionName());
           regionrep.save(updatedregion);
         }catch(Exception e){
