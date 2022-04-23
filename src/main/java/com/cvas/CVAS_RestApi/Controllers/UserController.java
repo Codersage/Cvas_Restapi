@@ -39,6 +39,25 @@ public class UserController {
     }
     
     
+    @PostMapping(value="loginuser/{email}")
+    
+    public Users login(@PathVariable String email,@RequestBody String password){
+   
+        System.out.println(email+""+password);
+          Users u  = userrep.findByEmail(email, password);
+         if(u==null){
+             
+             return null;
+         }else{
+               return u;
+         }  
+      
+      
+  
+        
+    }
+    
+    
     @PostMapping(value="/createuser")
     public boolean createuser( @RequestBody Users user){
         

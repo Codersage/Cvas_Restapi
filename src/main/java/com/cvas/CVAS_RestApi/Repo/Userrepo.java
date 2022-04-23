@@ -8,6 +8,8 @@ package com.cvas.CVAS_RestApi.Repo;
 
 import com.cvas.CVAS_RestApi.Models.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 /**
  *
@@ -15,4 +17,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface Userrepo extends JpaRepository<Users,Integer>{
     
+    @Query(value="SELECT * FROM user  WHERE Username = :username and password =:password ",nativeQuery=true)
+    public Users findByEmail(@Param("username")String email,@Param("password")String password);
 }
