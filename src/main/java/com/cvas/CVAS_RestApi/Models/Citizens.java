@@ -47,6 +47,21 @@ public class Citizens {
 
     @Column(name="Gender")
     private String Gender;
+    
+    @Column(name="DOB")
+    private String DOB;
+    
+
+    public void setGender(String Gender) {
+        this.Gender = Gender;
+    }
+
+    public String getGender() {
+        return Gender;
+    }
+    
+    
+    
     public void setAddedby(int addedby) {
         this.addedby = addedby;
     }

@@ -13,6 +13,7 @@ import javax.persistence.*;
  * @author User
  */
 @Entity
+@Table(name="doseline")
 public class DoseLine implements Serializable {
     @Column(name="doseid")
     @Id
